@@ -4,58 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger Delight</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>🍔 Burger Delight</h1>
-        <button id="theme-toggle">Dark Mode</button>
+        <div class="logo">🍔 Burger Delight</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#hot-deals">Hot Deals</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <a href="#order" class="order-btn">Order Now</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
+    
+    <section id="home">
+        <div class="home-content">
+            <h1>Juicy & Tasty Burgers</h1>
+            <p>Experience the best flavors in town.</p>
+            <a href="#order" class="order-btn">Order Now</a>
+        </div>
+    
+        <!-- Image Slider at Bottom Right -->
+        <!-- <div class="slider">
+            <img id="slider-img" src="./a-flying-burger-with-all-the-layers-ai-generative-free-photo.jpg" alt="Burger">
+            <p id="slider-price">$5.99</p>
+            <button onclick="prevSlide()">◀</button>
+            <button onclick="nextSlide()">▶</button>
+        </div> -->
 
-    <section class="menu">
-        <h2>Our Special Burgers</h2>
-        <div class="burger-list">
-            <div class="burger">
-                <img src="https://via.placeholder.com/150" alt="Burger 1">
-                <h3>Classic Cheeseburger</h3>
+         <!-- Background Image Slider at Bottom Right -->
+    <div class="bg-slider">
+        <button onclick="prevBg()">◀</button>
+        <p id="bg-price">$8.99</p>
+        <button onclick="nextBg()">▶</button>
+    </div>
+
+    </section>
+    
+    <!--Explore section-->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="burger1.jpg" alt="Classic Burger">
+                <h3>Classic Burger</h3>
                 <p>$5.99</p>
-                <button class="order-btn">Add to Cart</button>
             </div>
-            <div class="burger">
-                <img src="https://via.placeholder.com/150" alt="Burger 2">
-                <h3>Spicy BBQ Burger</h3>
+            <div class="menu-item">
+                <img src="burger2.jpg" alt="Cheese Burger">
+                <h3>Cheese Burger</h3>
                 <p>$6.99</p>
-                <button class="order-btn">Add to Cart</button>
             </div>
         </div>
     </section>
 
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+    <section id="hot-deals">
+        <div class="hot-deals-container">
+            <!-- Image on the Left -->
+            <div class="hot-deals-image">
+                <img id="deal-img" src="deal1.jpg" alt="Hot Deal">
+            </div>
+    
+            <!-- Write-up on the Right -->
+            <div class="hot-deals-text">
+                <h1>Hot Deals</h1>
+                <h2>🔥 Limited Time Offer!</h2>
+                <p id="deal-text">Get a delicious double cheeseburger with crispy fries and a drink at just $9.99! Don't miss out!</p>
+                <button class="deal-btn">Order Now</button>
+    
+                <!-- Navigation for Changing Deals -->
+                <div class="deal-slider">
+                    <button onclick="prevDeal()">◀</button>
+                    <button onclick="nextDeal()">▶</button>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section class="delivery">
-        <h2>Delivery Form</h2>
-        <form id="delivery-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Address" required>
-            <input type="tel" placeholder="Phone Number" required>
-            <button type="submit">Place Order</button>
-        </form>
+    
+    <section id="about-us">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Why Choose Our Burgers? 🍔</h2>
+                <p>Our burgers are made with 100% fresh ingredients, juicy beef patties, and secret sauces that make every bite unforgettable! Come and taste the difference today!🔥</p>
+            </div>
+        </div>
     </section>
-
+    <section id="customer-reviews">
+        <h2>What Our Customers Say 🏆</h2>
+        <div class="reviews-container">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <img src="customer1.jpg" alt="Customer 1">
+                <div class="review-text">
+                    <p>"The best burger I've ever had! Juicy, fresh, and full of flavor. Highly recommended! 🍔🔥"</p>
+                    <h4>- James Carter</h4>
+                </div>
+            </div>
+    
+            <!-- Review 2 -->
+            <div class="review-card">
+                <img src="customer2.jpg" alt="Customer 2">
+                <div class="review-text">
+                    <p>"Amazing experience! The service was top-notch, and the burgers were just delicious. 🍟😋"</p>
+                    <h4>- Sarah Johnson</h4>
+                </div>
+            </div>
+    
+            <!-- Review 3 -->
+            <div class="review-card">
+                <img src="customer3.jpg" alt="Customer 3">
+                <div class="review-text">
+                    <p>"I keep coming back for more! The taste and quality are unmatched. 10/10! 🎉"</p>
+                    <h4>- Michael Lee</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+        
     <footer>
-        <p>© 2024 Burger Delight. All Rights Reserved.</p>
-    </footer>
+        <div class="footer-container">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <h2>Burger Delight 🍔</h2>
+            </div>
+    
+            <!-- Navigation Links -->
+            <div class="footer-links">
+                <a href="#menu">Menu</a>
+                <a href="#hot-deals">Hot Deals</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#order" class="order-btn">Order Now</a>
+            </div>
+    
+            <!-- Address -->
+            <div class="footer-address">
+                <p>📍 123 Burger Street, Food City, USA</p>
+                <p>📞 +1 (234) 567-890</p>
+                <p>📧 contact@burgerhub.com</p>
+            </div>
+    
+        <!-- Social Media -->
+        <div class="footer-socials">
+            <a href="https://www.facebook.com" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
 
 </body>
 </html>

@@ -1,0 +1,512 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+}
+
+/* Header */
+header {
+    background: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: yellow;
+}
+
+nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: inline-flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: yellow;
+    font-size: 18px;
+}
+
+.order-btn {
+    background: yellow;
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: yellow;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: black;
+        text-align: center;
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .order-btn {
+        display: none;
+    }
+}
+/* Home Section */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 90vh;
+    /* background: url('bg3.avif') center right; */
+    padding: 0 10%;
+    color: white;
+    position: relative;
+}
+
+.home-content {
+    max-width: 500px;
+}
+
+.home-content h1 {
+    font-size: 48px;
+    color: yellow;
+}
+
+.home-content p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.order-btn {
+    background: red;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Image Slider */
+/* .slider {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.slider img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.slider p {
+    color: yellow;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.slider button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+} */
+
+/* Background Image Slider */
+.bg-slider {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bg-slider button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.bg-slider p {
+    color: yellow;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #home {
+        text-align: center;
+        justify-content: center;
+        padding: 0 5%;
+    }
+
+    .slider {
+        top: 10px;
+        right: 10px;
+    }
+
+    .bg-slider {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+/* Menu Section */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-item {
+    background: yellow;
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+/* Hot Deals Section */
+#hot-deals {
+    padding: 50px 10%;
+    background: black;
+    color: white;
+}
+
+.hot-deals-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Image on the Left */
+.hot-deals-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Write-up on the Right */
+.hot-deals-text {
+    max-width: 500px;
+}
+
+.hot-deals-text h2 {
+    font-size: 32px;
+    color: yellow;
+}
+
+.hot-deals-text p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.deal-btn {
+    background: red;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Navigation Buttons for Switching Deals */
+.deal-slider {
+    margin-top: 15px;
+}
+
+.deal-slider button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hot-deals-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hot-deals-image img {
+        width: 100%;
+    }
+}
+
+/* About Us Section */
+#about-us {
+    position: relative;
+    background: url('ng1.jpg') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.about-container {
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    color: yellow;
+}
+
+.about-content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about-us {
+        height: auto;
+        padding: 50px 10px;
+    }
+
+    .about-container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 26px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content h2 {
+        font-size: 22px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+}
+/* Customer Reviews Section */
+#customer-reviews {
+    padding: 50px 10%;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+#customer-reviews h2 {
+    font-size: 32px;
+    color: yellow;
+    margin-bottom: 30px;
+}
+
+/* Reviews Grid */
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Review Card */
+.review-card {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 5px 15px rgba(255, 255, 0, 0.5);
+}
+
+/* Customer Photo */
+.review-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid yellow;
+    margin-bottom: 10px;
+}
+
+/* Review Text */
+.review-text p {
+    font-size: 16px;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.review-text h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* Footer Section */
+footer {
+    background: #111;
+    color: white;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer Logo */
+.footer-logo h2 {
+    font-size: 28px;
+    color: yellow;
+    margin-bottom: 15px;
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: yellow;
+}
+
+/* Order Now Button */
+.order-btn {
+    padding: 5px 10px;
+    background: red;
+    border-radius: 5px;
+}
+
+.order-btn:hover {
+    background: darkred;
+}
+
+/* Address */
+.footer-address p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Social Media Icons */
+.footer-socials {
+    margin-top: 10px;
+}
+
+.footer-socials img {
+    width: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        gap: 20px;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-socials .social-icon {
+        font-size: 25px;
+    }
+}
