@@ -7,6 +7,408 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+ <!-- jecinta css -->
+ <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+    }
+    header {
+        text-align: center;
+        padding: 1rem;;
+    }
+    .explore-menu {
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
+gap: 10px; /* Reduced gap for compactness */
+padding: 10px; /* Smaller padding around the section */
+}
+
+#Menu-span{
+color: #ff8000;
+}
+.menu-item {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background: #fff;
+padding: 0;
+border: 2px solid #ffcc00; /* Bright yellow border for branding */
+border-radius: 6px; /* Slightly smaller border-radius */
+overflow: hidden;
+box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Slightly lighter shadow */
+transition: transform 0.2s ease, background-color 0.2s ease;
+height: 240px; /* Reduce overall height */
+}
+
+.menu-item:hover {
+background-color: #ff8000; /* Bright orange hover effect */
+transform: scale(1.05);
+border-color: #ff3300; /* Change border color on hover */
+}
+
+.menu-item img {
+width: 100%;
+height: 120px; /* Smaller height for images */
+object-fit: cover; /* Ensure images fit nicely */
+}
+
+.menu-info {
+display: grid;
+grid-template-rows: auto auto auto;
+padding: 8px; /* Smaller padding for compactness */
+text-align: center;
+background-color: #fff;
+}
+
+.menu-info h3 {
+margin: 3px 0;
+font-size: 16px; /* Smaller font size */
+font-weight: bold;
+color: #d80000; /* Bold red for titles */
+text-transform: uppercase; /* McDonald's playful and bold styling */
+}
+
+.menu-info p.price {
+color: #ffcc00; /* Bright yellow for price */
+font-weight: bold;
+font-size: 14px; /* Smaller font size */
+margin: 3px 0;
+}
+
+.menu-info p.description {
+color: #444; /* Neutral gray */
+font-size: 12px; /* Smaller font size */
+margin: 3px 0;
+}
+
+/* Adjust grid layout for tablets */
+@media (max-width: 768px) {
+.explore-menu {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    gap: 10px; /* Keep gap compact */
+    padding: 10px; /* Reduced padding */
+}
+.menu-item {
+    height: 200px; /* Smaller height for items */
+}
+.menu-item img {
+    height: 100px; /* Smaller image height */
+}
+.menu-info h3 {
+    font-size: 14px; /* Smaller title font */
+}
+.menu-info p.price {
+    font-size: 12px; /* Smaller price font */
+}
+.menu-info p.description {
+    font-size: 10px; /* Smaller description font */
+}
+}
+
+/* Adjust grid layout for mobile devices */
+@media (max-width: 480px) {
+.explore-menu {
+    grid-template-columns: 1fr; /* Single column for small screens */
+    gap: 8px; /* Reduced gap */
+    padding: 8px; /* Compact padding */
+}
+.menu-item {
+    height: 300px; /* Smaller height for compact layout */
+    margin: 20px;
+}
+.menu-item img {
+    height: 220px; /* Smaller image height */
+}
+.menu-info h3 {
+    font-size: 12px; /* Smaller title font for mobile */
+}
+.menu-info p.price {
+    font-size: 10px; /* Smaller price font */
+}
+.menu-info p.description {
+    font-size: 9px; /* Compact description font */
+}
+}
+
+
+    /* Hot Deals Section */
+/* Hot Deals Section */
+.hot-deals {
+text-align: center;
+padding: 40px 20px;
+background-color: #fff5e6;
+}
+
+#deals-span{
+color: #ff8000;
+font-family: sans-serif;
+}
+
+.hot-deals h2 {
+font-size: 36px;
+margin-bottom: 20px;
+
+}
+
+/* Slider Container */
+.hot-deals-container {
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+max-width: 800px;
+margin: 0 auto;
+overflow: hidden;
+}
+
+/* Slider */
+.hot-deals-slider {
+display: flex;
+transition: transform 0.5s ease;
+width: 100%;
+}
+
+/* Individual Deal */
+.hot-deal {
+display: flex;
+align-items: center;
+background: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+min-width: 100%;
+text-align: left;
+}
+
+.hot-deal img {
+width: 50%;
+height: auto;
+border-right: 1px solid #ddd;
+}
+
+.deal-info {
+padding: 20px;
+flex-grow: 1;
+}
+
+.deal-info h3 {
+font-size: 24px;
+margin-bottom: 10px;
+color: #333;
+}
+
+.deal-info p {
+margin-bottom: 10px;
+color: #666;
+font-size: 16px;
+}
+
+.deal-info .deal-price {
+font-size: 18px;
+color: #ff8000;
+font-weight: bold;
+}
+
+.visit-now {
+background-color: #ff8000;
+color: #fff;
+border: none;
+border-radius: 4px;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.visit-now:hover {
+background-color: #e67300;
+}
+
+/* Arrow Buttons */
+.arrow-btn {
+background: none;
+border: none;
+font-size: 36px;
+cursor: pointer;
+color: #333;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 10;
+transition: color 0.3s ease;
+padding: 5px;
+}
+
+.arrow-btn:hover {
+color: #ff8000;
+}
+
+.left-arrow {
+left: 10px;
+}
+
+.right-arrow {
+right: 10px;
+}
+
+
+
+
+
+
+/* Why Try Section */
+/* Why Try Section */
+.why-try {
+text-align: center;
+padding: 50px 20px;
+position: relative;
+}
+
+.why-try .content h2 {
+font-size: 36px;
+color: #333;
+margin-bottom: 5px;
+}
+
+.why-try .content h2 span {
+color: #ff8000;
+font-weight: bold;
+}
+
+.why-try .content .subtitle {
+font-size: 18px;
+color: #666;
+margin-bottom: 30px;
+font-style: italic;
+}
+
+/* Burger Container */
+.burger-container {
+position: relative;
+display: inline-block;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.burger-image {
+width: 100%;
+max-width: 600px;
+height: auto;
+display: block;
+margin: 0 auto;
+}
+
+/* Floating Text */
+.hover-text {
+position: absolute;
+background: rgba(255, 128, 0, 0.9);
+color: #fff;
+padding: 5px 10px;
+border-radius: 15px;
+font-size: 14px;
+font-weight: bold;
+transition: transform 0.3s ease, opacity 0.3s ease;
+opacity: 0.9;
+}
+
+.hover-text:hover {
+transform: scale(1.1);
+opacity: 1;
+}
+
+/* Specific Positions for Floating Text */
+.best-quality {
+top: 50%;
+left: 5%;
+transform: translate(-50%, -50%);
+}
+
+.natural-ingredients {
+top: 30%;
+left: 60%;
+transform: translate(-50%, -50%);
+}
+
+.fast-delivery {
+top: 65%;
+right: 5%;
+transform: translate(50%, -50%);
+}
+
+.huge-quantity {
+bottom: 10%;
+right: 50%;
+transform: translate(50%, -50%);
+}
+
+/* Media query for tablets (screens <= 768px) */
+@media (max-width: 768px) {
+.why-try {
+    padding: 30px 15px;
+}
+.why-try .content h2 {
+    font-size: 28px; /* Smaller heading font size */
+}
+.why-try .content .subtitle {
+    font-size: 16px; /* Adjusted subtitle font */
+}
+.burger-container {
+    max-width: 600px; /* Adjusted burger container size */
+}
+.burger-image {
+    max-width: 500px; /* Reduce burger image size */
+}
+.hover-text {
+    font-size: 12px; /* Smaller floating text */
+    padding: 4px 8px; /* Adjust padding for compactness */
+}
+}
+
+/* Media query for mobile devices (screens <= 480px) */
+@media (max-width: 480px) {
+.why-try {
+    padding: 20px 10px;
+}
+.why-try .content h2 {
+    font-size: 24px; /* Compact heading size */
+}
+.why-try .content .subtitle {
+    font-size: 14px; /* Smaller subtitle font */
+}
+.burger-container {
+    max-width: 100%; /* Full-width container for mobile */
+}
+.burger-image {
+    max-width: 300px; /* Reduce burger image size for smaller screens */
+}
+.hover-text {
+    font-size: 10px; /* Smaller floating text */
+    padding: 3px 6px; /* Compact padding */
+}
+.best-quality {
+    top: 45%;
+    left: 10%; /* Shift slightly closer to center */
+}
+.natural-ingredients {
+    top: 25%;
+    left: 50%; /* Center more for smaller screens */
+}
+.fast-delivery {
+    top: 70%;
+    right: 10%; /* Shift slightly closer to center */
+}
+.huge-quantity {
+    bottom: 5%;
+    right: 45%; /* Adjust position */
+}
+}
+
+</style>
+
 </head>
 <body>
 
@@ -45,6 +447,156 @@
         <button onclick="nextBg()">▶</button>
     </div>
 
+    </section>
+
+    <!-- jecinta code  -->
+    <section>
+        <header>
+            <h1>Explore <span id="Menu-span">Our Menu</span></h1>
+        </header>
+    
+        <section class="explore-menu">
+            <div class="menu-item">
+                <img src="Classic.png" alt="Classic Burger">
+                <div class="menu-info">
+                    <h3>Classic Burger</h3>
+                    <p class="price">$8.99</p>
+                    <p class="description">A timeless burger with fresh lettuce, tomato, and our secret sauce.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="cheese-removebg-preview.png" alt="Cheese Burger">
+                <div class="menu-info">
+                    <h3>Cheese Burger</h3>
+                    <p class="price">$9.99</p>
+                    <p class="description">Juicy beef patty topped with melted cheddar cheese.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="bacon-removebg-preview.png" alt="Bacon Burger">
+                <div class="menu-info">
+                    <h3>Bacon Burger</h3>
+                    <p class="price">$10.99</p>
+                    <p class="description">A savory delight with crispy bacon and smoky BBQ sauce.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="vegan remove bg.png" alt="Vegan Burger">
+                <div class="menu-info">
+                    <h3>Vegan Burger</h3>
+                    <p class="price">$11.99</p>
+                    <p class="description">Plant-based goodness with all the classic burger flavors.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="double patty.png" alt="Double Patty Burger">
+                <div class="menu-info">
+                    <h3>Double Patty Burger</h3>
+                    <p class="price">$12.99</p>
+                    <p class="description">Twice the meat, twice the flavor. A feast for burger lovers.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="spicy.png" alt="Spicy Burger">
+                <div class="menu-info">
+                    <h3>Spicy Burger</h3>
+                    <p class="price">$9.49</p>
+                    <p class="description">Turn up the heat with jalapeños and our spicy sauce.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="chicken.png" alt="Chicken Burger">
+                <div class="menu-info">
+                    <h3>Chicken Burger</h3>
+                    <p class="price">$10.49</p>
+                    <p class="description">Crispy chicken breast with creamy mayo and pickles.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="mushroom.png" alt="Mushroom Burger">
+                <div class="menu-info">
+                    <h3>Mushroom Burger</h3>
+                    <p class="price">$11.49</p>
+                    <p class="description">Rich and savory with sautéed mushrooms and Swiss cheese.</p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="hot-deals">
+            <h2>🔥 Hot <span id="deals-span">Deals</span></h2>
+            <div class="hot-deals-container">
+                <button class="arrow-btn left-arrow">&#10094;</button>
+                <div class="hot-deals-slider">
+                    <!-- Deal 1 -->
+                    <div class="hot-deal">
+                        <img src="deal1.jpg" alt="Classic Burger Deal">
+                        <div class="deal-info">
+                            <h3>Classic Burger Combo</h3>
+                            <p>A juicy classic burger served with crispy fries and a refreshing soda.</p>
+                            <p class="deal-price"><strong>Only $7.99!</strong></p>
+                            <button class="visit-now">Visit Now</button>
+                        </div>
+                    </div>
+                    <!-- Deal 2 -->
+                    <div class="hot-deal">
+                        <img src="deal2.jpg" alt="Cheese Burger Deal">
+                        <div class="deal-info">
+                            <h3>Cheese Lover’s Delight</h3>
+                            <p>Double cheese burger with extra layers of melted cheddar goodness.</p>
+                            <p class="deal-price"><strong>Special Price: $9.49</strong></p>
+                            <button class="visit-now">Visit Now</button>
+                        </div>
+                    </div>
+                    <!-- Deal 3 -->
+                    <div class="hot-deal">
+                        <img src="deal3.jpg" alt="Family Pack">
+                        <div class="deal-info">
+                            <h3>Family Feast Pack</h3>
+                            <p>Perfect for sharing! Includes 4 burgers, fries, and drinks for the whole family.</p>
+                            <p class="deal-price"><strong>Just $24.99!</strong></p>
+                            <button class="visit-now">Visit Now</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow-btn right-arrow">&#10095;</button>
+            </div>
+        </section>
+    
+        <section class="why-try">
+            <div class="content">
+                <h2>Why Should You <span>Try?</span></h2>
+                <p class="subtitle">because,</p>
+            </div>
+            <div class="burger-container">
+                <img src="Burger try.png" alt="Exploded Burger" class="burger-image">
+                <div class="hover-text best-quality">Best Quality</div>
+                <div class="hover-text natural-ingredients">Natural Ingredients</div>
+                <div class="hover-text fast-delivery">Fast Delivery</div>
+                <div class="hover-text huge-quantity">Huge Quantity</div>
+            </div>
+        </section>
+    
+        <script>
+            const slider = document.querySelector('.hot-deals-slider');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+    let currentIndex = 0;
+    
+    function updateSliderPosition() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? 2 : currentIndex - 1;
+        updateSliderPosition();
+    });
+    
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex === 2) ? 0 : currentIndex + 1;
+        updateSliderPosition();
+    });
+    
+        </script>
     </section>
     
     
