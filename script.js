@@ -27,39 +27,39 @@ function nextBg() {
     updateBg();
 }
 
-// hot deals javascirt
-const hotDeals = [
-    { 
-        src: "ap1.jpg", 
-        text: "Get a delicious double cheeseburger with crispy fries and a drink at just $9.99! Don't miss out!" 
-    },
-    { 
-        src: "deal2.jpg", 
-        text: "Try our spicy BBQ burger with onion rings and a drink for only $10.99! A must-try!" 
-    },
-    { 
-        src: "deal3.jpg", 
-        text: "Enjoy our limited-edition cheesy bacon burger with a side of loaded fries for just $11.99!" 
-    }
-];
+// // hot deals javascirt
+// const hotDeals = [
+//     { 
+//         src: "ap1.jpg", 
+//         text: "Get a delicious double cheeseburger with crispy fries and a drink at just $9.99! Don't miss out!" 
+//     },
+//     { 
+//         src: "deal2.jpg", 
+//         text: "Try our spicy BBQ burger with onion rings and a drink for only $10.99! A must-try!" 
+//     },
+//     { 
+//         src: "deal3.jpg", 
+//         text: "Enjoy our limited-edition cheesy bacon burger with a side of loaded fries for just $11.99!" 
+//     }
+// ];
 
-let currentDeal = 0;
+// let currentDeal = 0;
 
-function updateHotDeal() {
-    document.getElementById("deal-img").src = hotDeals[currentDeal].src;
-    document.getElementById("deal-text").innerText = hotDeals[currentDeal].text;
-}
+// function updateHotDeal() {
+//     document.getElementById("deal-img").src = hotDeals[currentDeal].src;
+//     document.getElementById("deal-text").innerText = hotDeals[currentDeal].text;
+// }
 
-function prevDeal() {
-    currentDeal = (currentDeal === 0) ? hotDeals.length - 1 : currentDeal - 1;
-    updateHotDeal();
-}
+// function prevDeal() {
+//     currentDeal = (currentDeal === 0) ? hotDeals.length - 1 : currentDeal - 1;
+//     updateHotDeal();
+// }
 
-function nextDeal() {
-    currentDeal = (currentDeal === hotDeals.length - 1) ? 0 : currentDeal + 1;
-    updateHotDeal();
-}
- // Ensure everything loads properly
-    updateSlider();  // Show first burger image
-    updateBg();      // Set first background image
-    updateHotDeal(); // Show first hot deal
+// function nextDeal() {
+//     currentDeal = (currentDeal === hotDeals.length - 1) ? 0 : currentDeal + 1;
+//     updateHotDeal();
+// }
+//  // Ensure everything loads properly
+//     updateSlider();  // Show first burger image
+//     updateBg();      // Set first background image
+//     updateHotDeal(); // Show first hot deal
