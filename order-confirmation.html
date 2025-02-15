@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .truck-container {
+            width: 200px; /* Adjusted width */
+            height: auto;
+            position: relative;
+            animation: drive 4s linear infinite alternate;
+        }
+
+        .truck-container img {
+            width: 100%; /* Makes the image responsive */
+            height: auto;
+        }
+
+        @keyframes drive {
+            0% { transform: translateX(-30px); }
+            100% { transform: translateX(30px); }
+        }
+
+        h1 {
+            color: #e44d26;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .back-home {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #e44d26;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .back-home:hover {
+            background-color: #ff7b00;
+        }
+
+        /* ====== Tablet Screens (768px and below) ====== */
+@media (max-width: 768px) {
+    .truck-container {
+        width: 150px; /* Make the truck smaller */
+        animation: drive 3s linear infinite alternate; /* Slightly faster animation */
+    }
+
+    @keyframes drive {
+        0% { transform: translateX(-20px); }
+        100% { transform: translateX(20px); }
+    }
+
+    h1 {
+        font-size: 20px; /* Reduce text size */
+    }
+
+    .back-home {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* ====== Mobile Screens (480px and below) ====== */
+@media (max-width: 480px) {
+    .truck-container {
+        width: 120px; /* Even smaller truck size for tiny screens */
+        animation: drive 2.5s linear infinite alternate; /* Slightly faster */
+    }
+
+    @keyframes drive {
+        0% { transform: translateX(-15px); }
+        100% { transform: translateX(15px); }
+    }
+
+    h1 {
+        font-size: 18px; /* Smaller title */
+    }
+
+    .back-home {
+        font-size: 12px;
+        padding: 6px 12px;
+        border-radius: 4px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- 🚚 Moving Truck Animation -->
+    <div class="truck-container">
+        <img src="truck bg.gif" alt="Moving Truck Animation">
+    </div>
+
+    <h1>Your Order is on the Way! 🚚</h1>
+
+    <a href="index.html" class="back-home">Go Back to Home</a>
+
+</body>
+</html>
+
