@@ -406,42 +406,62 @@ transform: translate(50%, -50%);
 </head>
 <body>
 
+    <section>
     <header>
         <div class="logo">🍔 Burger Delight</div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#hot-deals">Hot Deals</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Hot Deals</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li class="phone-number">08149909298</li>
             </ul>
+            <a href="#" class="order-btn">Order Now</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
-        <a href="Order.html" class="order-btn">Order Now</a>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
-    
-    <section id="home">
-        <div class="home-content">
-            <h1>Juicy & Tasty Burgers</h1>
-            <p>Experience the best flavors in town.</p>
-            <a href="Order.html" class="order-btn">Order Now</a>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h3>Try Our New</h3>
+           <h2> <span class="cheezy">Cheezy</span> <span class="bluster">Bluster</span></h2> 
+            <p>
+                Indulge in the ultimate burger experience with our <b>Cheezy Bluster</b>! Made with 
+                <b>100% fresh beef</b>,<b>melted cheddar cheese</b>, <b>crispy lettuce</b>, and a <b>buttery brioche bun</b>.  
+                Every bite is a <b>mouthwatering explosion of flavor</b> that will keep you coming back for more!
+           
+            </p>
+            <a href="#" class="hero-btn">Order Now</a>
         </div>
-    
-        <!-- Image Slider at Bottom Right -->
-        <!-- <div class="slider">
-            <img id="slider-img" src="./a-flying-burger-with-all-the-layers-ai-generative-free-photo.jpg" alt="Burger">
-            <p id="slider-price">$5.99</p>
-            <button onclick="prevSlide()">◀</button>
-            <button onclick="nextSlide()">▶</button>
-        </div> -->
-
-         <!-- Background Image Slider at Bottom Right -->
-    <div class="bg-slider">
-        <button onclick="prevBg()">◀</button>
-        <p id="bg-price">$8.99</p>
-        <button onclick="nextBg()">▶</button>
     </div>
+ 
+    <div class="slider-container">
+        <div class="slider">
+            <img src="bg1.avif" class="slide active">
+            <img src="ap1.jpg" class="slide">
+            <img src="bg4.avif" class="slide">
+        </div>
 
-    </section>
+        <!-- Price Display -->
+        <div class="price-tag">$<span id="price">5.99</span></div>
+        
+        <div class="controls">
+            <i class="fas fa-chevron-left prev" onclick="prevSlide()"></i>
+            <i class="fas fa-chevron-right next" onclick="nextSlide()"></i>
+        </div>
+    </div>
+    <!-- Social Media Icons -->
+    <div class="home-socials">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</div>
+</section>    
+</section>
+
 
     <!-- jecinta section code  code  -->
     <section>
