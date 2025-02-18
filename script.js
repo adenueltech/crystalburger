@@ -1,3 +1,6 @@
+document.querySelector(".hamburger").addEventListener("click", function () {
+    document.querySelector("nav").classList.toggle("active");
+});
 function toggleMenu() {
     const nav = document.querySelector("nav");
     nav.classList.toggle("show");
