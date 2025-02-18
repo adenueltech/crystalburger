@@ -277,16 +277,19 @@ nav {
 /* Home Social Media Icons */
 .home-socials {
     position: absolute;
-    bottom: 20px;
+    bottom: -20px;
     left: 100px;
     display: flex;
     gap: 30px;
+    
+    
 }
 
 .home-socials a {
     color: red;
     font-size: 30px;
     transition:transform 0.3 s ease, color 0.3s ease;
+   
 }
 
 .home-socials a:hover {
