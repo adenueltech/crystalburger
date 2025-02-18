@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place Your Order</title>
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        /* ✅ Prevent Overflow on All Screens */
+* {
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 /* ====== Global Styles ====== */
 body {
     font-family: Arial, sans-serif;
@@ -37,14 +42,12 @@ body::before {
 }
 
 
-* Header */
+/* ====== Header Styling ====== */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 50px;
-    background: linear-gradient(to right, white 65%, orange 50%);
-    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -59,35 +62,34 @@ header {
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
-    
 }
 
-/* Navigation */
+/* Navigation (Desktop) */
 nav {
-    display: flex;
-    align-items: center;
     flex-grow: 1;
-    justify-content: center;
-    position: relative;
+    display: flex;
+    justify-content: flex-end;
 }
 
-/* Centering Nav Links */
+/* Nav Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links li a {
     text-decoration: none;
-    color: red;
+    color: white;
     font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
+/* Hover Effect for Desktop */
 .nav-links li a:hover {
-    color: orange;
+    color: red;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
 }
 
 /* Phone Number in Nav */
@@ -97,74 +99,95 @@ nav {
     font-weight: bold;
 }
 
-/* Order Now Button - Top Right */
-.order-btn {
-    background: red;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    position: absolute;
-    right: 50px;
-    top: -10px;
-}
-
-.order-btn:hover {
-    background: darkred;
-}
-
-/* Hamburger Menu (Hidden by Default) */
 .hamburger {
-    display: none;
+    display: none; /* Hidden on desktop */
+    font-size: 26px;
     cursor: pointer;
+    color: white; /* Make the hamburger icon white */
+    position: absolute;
+    right: 20px; /* Align to the right */
+    top: 20px; /* Position inside the header */
+    z-index: 1100;
 }
 
-.hamburger i {
-    font-size: 25px;
-    color: black;
-}
-/* Responsive Design */
+
+/* ====== Responsive Styling ====== */
 @media (max-width: 768px) {
-    header {
-        padding: 15px 30px;
+
+    .hamburger {
+        display: block; /* Show on mobile */
     }
 
-    /* Hide Nav Links & Show Hamburger */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: orange;
+    nav {
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
+        background-color: #ff8000; /* Orange background for the nav on mobile */
+        backdrop-filter: blur(10px); /* Soft glass effect */
+        display: none;
+        flex-direction: column;
         text-align: center;
-        padding: 15px 0;
-        border-top: 2px solid white;
+        padding: 20px 0;
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease-in-out;
     }
 
-    .nav-links.active {
+    /* Show Menu */
+    nav.active {
         display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .nav-links li {
         padding: 10px 0;
     }
 
-    /* Show Hamburger Icon */
-    .hamburger {
-        display: block;
+    .nav-links li a {
+        font-size: 20px;
+        color: white; /* Ensure nav links are white on mobile */
+        padding: 12px 20px;
+        border-radius: 6px;
+        transition: background 0.3s ease-in-out, color 0.3s;
     }
 
-    /* Order Now Button Responsive */
-    .order-btn {
-        position: relative;
-        right: 0;
-        top: 0;
-        margin-left: 15px;
+    /* Stylish Hover Effect */
+    .nav-links li a:hover {
+        background: rgba(255, 128, 0, 0.7); /* Smooth orange hover */
+        color: white;
     }
-}
+
+    /* Animate Menu Opening */
+    nav {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    /* Ensure nav links are shown when hamburger is active */
+    nav.active {
+    display: flex;
+    }
+    }
+
+        /* Phone Number in Nav */
+    .phone-number {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    }
+
+  
+
+
+
+
 
 /* Flowing Gradient Animation */
 @keyframes flowingGradient {
@@ -311,113 +334,132 @@ nav {
             transform: scale(1.05);
         }
 
-        /* ====== Responsive Adjustments ====== */
+/* ====== Responsive Adjustments ====== */
+
+
+/* ✅ Large Tablets (1024px and below) */
 @media (max-width: 1024px) {
-    /* Medium screens (Tablets) */
+    /* Fix Order Container Overflow */
     .order-container {
         width: 95%;
         max-width: 600px;
+        padding: 25px;
     }
 
-    .burger-grid {
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Fix Form Grid Overflow */
+    .input-row {
+        flex-wrap: wrap; /* Ensures inputs stay inside the form */
+        gap: 10px;
     }
 
-    .burger-card {
-        width: 180px;
+    .input-group {
+        flex: 1 1 45%; /* Ensures two inputs per row */
+        min-width: 45%;
     }
 
     .place-order-btn {
         width: 85%;
     }
+
 }
 
+/* ✅ Tablets & Small Laptops (768px and below) */
 @media (max-width: 768px) {
-    /* Small screens (Mobile Landscape & Small Tablets) */
+    /* Fix Background Overflow */
     body {
         background-size: 500% 500%;
     }
 
+
+    /* Fix Order Form Inputs */
     .order-container {
         width: 90%;
         padding: 20px;
     }
 
-    .burger-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .burger-card {
-        width: 80%;
-    }
-
     .input-row {
-        flex-direction: column;
+        flex-direction: column; /* Stack inputs */
+        gap: 12px;
     }
 
+    .input-group {
+        width: 100%;
+    }
+
+    /* Fix Button */
     .place-order-btn {
         width: 90%;
     }
-}
 
+
+/* ✅ Mobile Phones (480px and below) */
 @media (max-width: 480px) {
-    /* Extra Small screens (Mobile Portrait) */
+    /* Fix Background Scaling */
     body {
         background-size: 600% 600%;
     }
 
+
+    /* Fix Text Size */
     h2 {
         font-size: 20px;
     }
 
+    /* Fix Order Container */
     .order-container {
         width: 95%;
         padding: 15px;
     }
 
+    /* Ensure Burger Cards Stay Inside */
     .burger-card {
         width: 100%;
+    }
+
+    /* Fix Input Fields */
+    .input-group {
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     .input-group input,
     .input-group select {
         font-size: 14px;
-        padding: 10px;
+        padding: 12px;
     }
 
+    /* Fix Button */
     .place-order-btn {
         width: 100%;
         font-size: 14px;
-        padding: 10px;
+        padding: 12px;
     }
+}
 }
 
     </style>
 </head>
 <body>
-
-    <header style="display: flex; margin-top: 30px;">
-        <div style="margin-left: -500px;">
-        <div class="logo"  >🍔 Burger Delight</div>
-    </div>
-        <div style="margin-left: 200px;" >
+    
+    <header>
+        <div class="logo">🍔 Burger Delight</div>
         <nav>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Hot Deals</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="/#menu-section">Menu</a></li>
+                <li><a href="/#hot-deals-section">Hot Deals</a></li>
+                <li><a href="/#contact-section">Contact Us</a></li>
                 <li class="phone-number">08149909298</li>
             </ul>
-          
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
         </nav>
-    </div>
+        
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger-menu" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> 
+        </div>
     </header>
+    
+
+
 
     <section class="order-container" style="margin-top: 100px;">
         <h2>Order Your Burger</h2>
@@ -427,9 +469,9 @@ nav {
                 <div class="burger-card">
                     <img src="Form Burger/Classic.png" alt="Classic Burger">
                     <h3>Classic Burger</h3>
-                    <p class="price">$5.99</p>
+                    <p class="price">$8.99</p>
                     <label>Quantity:</label>
-                    <select class="quantity" data-price="5.99">
+                    <select class="quantity" data-price="8.99">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -441,9 +483,9 @@ nav {
                 <div class="burger-card">
                     <img src="Form Burger/Cheese.png" alt="Cheese Burger">
                     <h3>Cheese Burger</h3>
-                    <p class="price">$6.99</p>
+                    <p class="price">$9.99</p>
                     <label>Quantity:</label>
-                    <select class="quantity" data-price="6.99">
+                    <select class="quantity" data-price="9.99">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -455,9 +497,74 @@ nav {
                 <div class="burger-card">
                     <img src="Form Burger/Bacon.png" alt="Bacon Burger">
                     <h3>Bacon Burger</h3>
-                    <p class="price">$7.99</p>
+                    <p class="price">$10.99</p>
                     <label>Quantity:</label>
-                    <select class="quantity" data-price="7.99">
+                    <select class="quantity" data-price="10.99">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="burger-card">
+                    <img src="Form Burger/Vegan.png" alt="Vegan Burger">
+                    <h3>Bacon Burger</h3>
+                    <p class="price">$11.99</p>
+                    <label>Quantity:</label>
+                    <select class="quantity" data-price="11.99">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="burger-card">
+                    <img src="Form Burger/Double patty.png" alt="Double Patty Burger">
+                    <h3>Bacon Burger</h3>
+                    <p class="price">$12.99</p>
+                    <label>Quantity:</label>
+                    <select class="quantity" data-price="12.99">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="burger-card">
+                    <img src="Form Burger/Spicy.png" alt="Spicy Burger">
+                    <h3>Spicy Burger</h3>
+                    <p class="price">$9.49</p>
+                    <label>Quantity:</label>
+                    <select class="quantity" data-price="9.49">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="burger-card">
+                    <img src="Form Burger/Chicken.png" alt="Chicken Burger">
+                    <h3>Chicken Burger</h3>
+                    <p class="price">$10.49</p>
+                    <label>Quantity:</label>
+                    <select class="quantity" data-price="10.49">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="burger-card">
+                    <img src="Form Burger/Mushroom.png" alt="Mushroom Burger">
+                    <h3>Mushroom Burger</h3>
+                    <p class="price">$11.49</p>
+                    <label>Quantity:</label>
+                    <select class="quantity" data-price="11.49">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -545,7 +652,7 @@ nav {
 
     <script>
         // Update total price when quantity changes
-        document.querySelectorAll(".quantity").forEach(select => {
+        document.querySelectorAll("quantity").forEach(select => {
             select.addEventListener("change", function() {
                 let total = 0;
                 document.querySelectorAll(".quantity").forEach(s => {
@@ -560,6 +667,19 @@ nav {
             event.preventDefault(); // Prevent default form submission
             window.location.href = "order-confirmation.html"; // Redirect to confirmation page
         });
+
+    function toggleMenu() {
+        document.querySelector("nav").classList.toggle("active");
+    }
+
+        // Close Menu When a Link is Clicked
+        document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", function() {
+            document.querySelector("nav").classList.remove("active");
+        });
+    });
+
+
     </script>
 
 </body>
