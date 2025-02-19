@@ -236,7 +236,7 @@
     background-color: #eee5e5; /* Dark background for footer */
     color: rgb(19, 18, 18);
     display: flex;
-   
+    flex-wrap: wrap; /* Allow items to stack properly on smaller screens */
     padding: 50px 20px; /* Increase padding for more space */
     justify-content: center; /* Center everything */
     align-items: center; /* Align items in the center */
@@ -360,6 +360,102 @@
 
 .footer-links a:hover {
     color: #0056b3; /* Darker blue on hover */
+}
+/* For tablets and smaller desktops (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column; /* Stack items */
+        text-align: center; /* Center text */
+        padding: 40px 15px; /* Adjust padding */
+    }
+
+    .contact-info {
+        position: static; /* Remove absolute positioning */
+        transform: none;
+        width: 80%; /* Make it full-width */
+        margin-bottom: 20px; /* Space below */
+    }
+
+    .center-content {
+        width: 100%; /* Take full width */
+    }
+
+    .notify-me {
+        width: 100%;
+    }
+
+    .notify-me input {
+        width: 90%; /* Make input responsive */
+    }
+
+    .burger-icon {
+        width: 60px; /* Smaller burger icon */
+    }
+}
+
+/* For mobile devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack everything */
+        padding: 30px 10px; /* Adjust padding */
+    }
+
+    .contact-info {
+        width: 100%; /* Full width for better alignment */
+        text-align: center;
+        padding: 30px;
+    }
+
+    .notify-me input {
+        width: 100%; /* Make input field full width */
+    }
+
+    .notify-me button {
+        width: 100%; /* Full width button */
+        padding: 10px;
+    }
+
+    .footer-links ul {
+        text-align: center;
+    }
+
+    .footer-links ul li {
+        display: inline-block; /* Arrange links in a row */
+        margin: 0 10px; /* Add spacing */
+    }
+
+    .burger-icon {
+        width: 50px; /* Adjust icon size */
+    }
+}
+
+/* For very small screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .footer-container {
+        padding: 20px 5px; /* Reduce padding */
+    }
+
+    .contact-info {
+        padding: 20px;
+        font-size: medium;
+    }
+
+    .notify-me h3 {
+        font-size: 18px; /* Adjust heading size */
+    }
+
+    .notify-me input {
+        padding: 6px; /* Adjust input size */
+    }
+
+    .notify-me button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 5px; /* Reduce space */
+    }
 }
 
 

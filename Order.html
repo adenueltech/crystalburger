@@ -436,7 +436,6 @@ nav {
     }
 }
 }
-
         /* Reviews Section */
         #reviews {
             background-color: #fff;
@@ -538,59 +537,102 @@ nav {
 /* Container */
 .container {
     display: flex;  
-    justify-content: flex-start;  /* Aligns items to the left */
+    justify-content: center;  
     align-items: center;  
-    gap: 20px;  /* Space between the gallery and text */
-    padding: 0;  /* Remove padding */
+    gap: 30px;  /* Increase space between text and gallery */
+    padding: 30px;  /* Move content away from edges */
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;  /* Ensure container takes full width */
-    max-width: 100%;  /* Avoid extra spacing */
-    margin-top: 85px;;
-    margin-bottom: 85px;;
+    width: 85%;  /* Reduce width slightly for centering */
+    max-width: 100%;
+    margin: 85px auto; /* Ensure it stays centered */
 }
+
 
 /* Gallery Container with Scroll */
 .gallery-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
-    width: 75%;  /* Makes the gallery fill most of the container */
-    overflow: hidden;  /* Hide overflow to keep scrollable area neat */
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
 }
 
 /* Scrollable Gallery */
 .photo-gallery {
     display: flex;
-    gap: 0;
-    flex-wrap: nowrap;
+    gap: 15px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    white-space: nowrap;
+    width: 80%;
+    padding: 10px;
 }
 
 /* Hide scrollbar for WebKit browsers */
 .photo-gallery::-webkit-scrollbar {
     display: none;
 }
-
 /* Image Styling */
 .photo-gallery img {
-    width: 170px;
-    height: 160px;
+    width: 200px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 200px;
 }
 
 /* Bounce Effect on Hover */
 .photo-gallery img:hover {
-    transform: translateY(-10px);  /* Moves the image up slightly */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow to give depth */
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    z-index: 100;
+    transition: background 0.3s ease;
+}
+
+/* Left Button */
+.scroll-btn.left {
+    left: 10px;
+}
+
+/* Right Button */
+.scroll-btn.right {
+    right: 10px;
+}
+
+/* Hover Effect */
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hide Buttons on Larger Screens */
+@media (min-width: 1025px){
+    .scroll-btn {
+        display: none;
+    }
+
+}
+   
 /* Arrow Buttons */
 .arrow {
     position: absolute;
@@ -624,12 +666,14 @@ nav {
 /* Text Section Style */
 .text-section {
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
     justify-content: space-between;
     font-size: 18px;
-    width: 250px;  
-    margin-left: 20px; /* Space between image gallery and text */
-    line-height: 1.1;  
+    width: 280px;
+    margin-right: auto;
+    margin-left: auto; /* Center the text section */
+    text-align: center; /* Ensure text is properly aligned */
+    line-height: 1.3;
 }
 
 /* Different colors and bold text */
@@ -661,7 +705,9 @@ nav {
     display: flex;
     flex-wrap: wrap; /* Allow items to stack properly on smaller screens */
     padding: 50px 20px; /* Increase padding for more space */
-    justify-content: space-between; /* Ensure good spacing */
+    justify-content: center; /* Center everything */
+    align-items: center; /* Align items in the center */
+    text-align: center; /* Center text */
 }
 
 /* Contact Info Section (Left, Stacked) */
@@ -793,115 +839,106 @@ nav {
 /* Small Screens (Tablets & Mobile) */
 @media (max-width: 1024px) {
     .container {
-        flex-direction: column; /* Stack gallery and text */
+        flex-direction: column; /* Stack text and gallery vertically */
         align-items: center;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 20px; /* Reduce padding */
     }
 
     .gallery-container {
-        width: 100%; /* Full width */
+        width: 100%;
+        overflow-x: auto; /* Allow horizontal scrolling */
+        display: flex;
         justify-content: center;
+    }
+
+    .photo-gallery {
+        display: flex;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent images from wrapping */
+        scroll-snap-type: x mandatory; /* Ensures smooth snap scrolling */
+        gap: 10px; /* Space between images */
+        padding-bottom: 10px; /* Avoid scrollbar overlapping */
+        justify-content: center; /* Centers the images */
     }
 
     .photo-gallery img {
-        width: 140px; /* Smaller images */
-        height: 130px;
+        width: 180px;
+        height: auto;
+        min-width: 180px;
+        object-fit: cover;
+        scroll-snap-align: center; /* Centers each image when scrolling */
     }
 
     .text-section {
-        width: 100%; /* Full width for text */
+        width: 90%; /* Adjust text width */
         text-align: center;
-        margin-left: 0;
-    }
-}
-
-/* Medium Screens (Tablets, 768px) */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column; /* Stack footer sections */
-        text-align: center;
-        padding: 20px;
-    }
-
-    /* Ensure Contact Info is Visible */
-    .contact-info {
-        position: static; /* Remove absolute positioning */
-        width: 100%;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .contact-info p {
-        justify-content: center;
-    }
-
-    /* Center the notify me form */
-    .notify-me {
-        width: 90%;
-    }
-
-    .notify-me input {
-        width: 80%; /* Adjust input field width */
-    }
-
-    .notify-me button {
-        width: 50%;
-    }
-
-    /* Footer Links Adjustments */
-    .footer-links {
-        text-align: center;
-    }
-
-    .footer-links ul {
-        padding: 0;
-    }
-
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-
-    .footer-links a {
-        font-size: 14px;
-    }
-
-    /* Resize Icons */
-    .contact-info i {
-        font-size: 18px;
+        margin-top: 20px;
     }
 }
 
 /* Mobile Screens (Phones, 480px and Below) */
 @media (max-width: 480px) {
     .container {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .photo-gallery img {
-        width: 120px; /* Even smaller images */
-        height: 110px;
+        width: 95%;
+        padding: 15px;
+        gap: 20px; /* Reduce space */
     }
 
     .gallery-container {
         width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap;
+        display: flex;
+        justify-content: flex-start;
+        scroll-behavior: smooth;
+    }
+
+    .photo-gallery {
+        display: flex;
+        overflow-x: auto; /* Enable scrolling */
+        white-space: nowrap; /* Prevent images from wrapping */
+        gap: 10px; /* Space between images */
+        padding-bottom: 10px; /* Prevent scrollbar from hiding */
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+    }
+
+    .photo-gallery::-webkit-scrollbar {
+        height: 5px; /* Small scrollbar */
+    }
+
+
+
+    .photo-gallery::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2); /* Scrollbar color */
+        border-radius: 5px;
+    }
+
+    .photo-gallery img {
+        width: 180px;
+        height: auto;
+        min-width: 180px;
+        object-fit: cover;
+        scroll-snap-align: start; /* Align images on scroll */
     }
 
     .text-section {
         font-size: 16px;
-        width: 90%;
+        line-height: 1.2;
+        width: 100%;
+        text-align: center;
     }
 
     .footer-container {
         flex-direction: column;
-        padding: 15px; /* Reduced padding for a smaller footer */
+        padding: 15px;
         text-align: center;
     }
 
     /* Ensure Contact Info is Fully Visible */
     .contact-info {
-        position: relative; /* Remove absolute positioning */
+        position: relative;
         width: 100%;
         padding: 10px;
         text-align: center;
@@ -909,15 +946,15 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px; /* Space between each item */
+        gap: 10px;
     }
 
     .contact-info p {
         display: flex;
         align-items: center;
-        gap: 8px; /* Space between icon and text */
+        gap: 8px;
         font-size: 14px;
-        flex-wrap: nowrap; /* Keep everything on one line */
+        flex-wrap: nowrap;
         justify-content: center;
         width: 100%;
     }
@@ -1304,6 +1341,12 @@ nav {
             document.querySelector("nav").classList.remove("active");
         });
     });
+
+    function scrollGallery(direction) {
+    let gallery = document.querySelector(".photo-gallery");
+    let scrollAmount = 220; // Adjust based on image width
+    gallery.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+}
 
 
     </script>
