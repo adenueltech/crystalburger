@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Contact Us</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
+            box-sizing: border-box;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+        
 
         body {
             font-family: Arial, sans-serif;
@@ -240,32 +244,33 @@
 }
 
 
-
-        
 .footer-container { 
     position: relative;
-    background-color: #eee5e5; /* Dark background for footer */
+    background-color: #eee5e5; /* Footer Background */
     color: rgb(19, 18, 18);
     display: flex;
-    padding: 40px;
-    padding-top:15px,30px;
-    
-    
+    flex-wrap: wrap; /* Allow items to stack properly on smaller screens */
+    padding: 50px 20px; /* Increase padding for more space */
+    justify-content: center; /* Center everything */
+    align-items: center; /* Align items in the center */
+    text-align: center; /* Center text */
 }
 
 /* Contact Info Section (Left, Stacked) */
 .contact-info {
     background-color: #ff3300; /* Red background */
-    padding: 50px;
-    border-radius:none;
+    padding: 30px; /* Reduce padding to fit everything */
+    border-radius: 10px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:large;
-    position: absolute;
-    right: 0; /* Push to the far left */
-    top: 50%; /* Center it vertically */
-    transform: translateY(-50%);
+    font-size: large;
+    position: relative; /* Adjusted for better spacing */
     color: white; /* Text color */
-    width: 30%; /* Adjust width */
+    width: 100%; /* Full width on smaller screens */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .contact-info p {
@@ -273,6 +278,9 @@
     align-items: center;
     gap: 8px; /* Space between icon and text */
     margin: 5px 0;
+    font-size: 16px; /* Adjust font size */
+    justify-content: center;
+    width: 100%;
 }
 
 /* Style icons */
@@ -282,12 +290,13 @@
 
 /* Center Content Section */
 .center-content {
-    flex-grow: 1; /* Takes available space */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the content */
+    align-items: center;
     text-align: center;
-    width: 50%; /* Ensures full width */
+    width: 100%;
+    margin-top: 20px; /* Extra space */
 }
 
 /* Styling for h3 */
@@ -300,12 +309,11 @@
 /* Notify Me Section */
 .notify-me {
     display: flex;
-    flex-direction: column; /* Stack input and button */
+    flex-direction: column;
     align-items: center;
-     gap: 10px; 
-    margin:auto ;
-    margin-top: -10px;
-    /* width: 100%; Ensures it aligns with h3 */
+    gap: 10px;
+    margin: auto;
+    padding-top: 10px; /* Add space above */
 }
 
 
@@ -348,7 +356,9 @@
 
 /* Footer Links */
 .footer-links {
-    margin-top: 20px; /* Space between subscription section and links */
+    margin-top: 30px; /* More space between sections */
+    width: 100%;
+    text-align: center;
 }
 
 .footer-links ul {
@@ -372,12 +382,183 @@
 }
 
 
+/* Small Screens (Tablets & Mobile) */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stack gallery and text */
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .gallery-container {
+        width: 100%; /* Full width */
+        justify-content: center;
+    }
+
+    .photo-gallery img {
+        width: 140px; /* Smaller images */
+        height: 130px;
+    }
+
+    .text-section {
+        width: 100%; /* Full width for text */
+        text-align: center;
+        margin-left: 0;
+    }
+}
+
+/* Medium Screens (Tablets, 768px) */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack footer sections */
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Ensure Contact Info is Visible */
+    .contact-info {
+        position: static; /* Remove absolute positioning */
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .contact-info p {
+        justify-content: center;
+    }
+
+    /* Center the notify me form */
+    .notify-me {
+        width: 90%;
+    }
+
+    .notify-me input {
+        width: 80%; /* Adjust input field width */
+    }
+
+    .notify-me button {
+        width: 50%;
+    }
+
+    /* Footer Links Adjustments */
+    .footer-links {
+        text-align: center;
+    }
+
+    .footer-links ul {
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    /* Resize Icons */
+    .contact-info i {
+        font-size: 18px;
+    }
+}
+
+/* Mobile Screens (Phones, 480px and Below) */
+@media (max-width: 480px) {
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .photo-gallery img {
+        width: 120px; /* Even smaller images */
+        height: 110px;
+    }
+
+    .gallery-container {
+        width: 100%;
+    }
+
+    .text-section {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        padding: 15px; /* Reduced padding for a smaller footer */
+        text-align: center;
+    }
+
+    /* Ensure Contact Info is Fully Visible */
+    .contact-info {
+        position: relative; /* Remove absolute positioning */
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Space between each item */
+    }
+
+    .contact-info p {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Space between icon and text */
+        font-size: 14px;
+        flex-wrap: nowrap; /* Keep everything on one line */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .contact-info i {
+        font-size: 16px;
+        min-width: 20px;
+    }
+    
+    /* Ensure Footer Links Fit */
+    .footer-links {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links ul {
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    /* Adjust Notify Me Section */
+    .notify-me {
+        width: 100%;
+    }
+
+    .notify-me input {
+        width: 95%; /* Slightly smaller width for a compact layout */
+    }
+
+    .notify-me button {
+        width: 95%; /* Adjust button width to match input */
+    }
+}
+
+
         
 /* ====== Header Styling ====== */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: linear-gradient(to right, white 45%, #ff8000 55%);
     padding: 20px 50px;
     width: 100%;
     top: 0;
@@ -393,6 +574,7 @@ header {
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
+    margin-right: auto; /* Pushes the logo to the left */
 }
 
 /* Navigation (Desktop) */
@@ -438,6 +620,7 @@ nav {
     position: absolute;
     right: 20px; /* Align to the right */
     top: 20px; /* Position inside the header */
+    margin-left: 20px; /* Adds spacing between logo and hamburger */
     z-index: 1100;
 }
 
@@ -447,6 +630,9 @@ nav {
 
     .hamburger {
         display: block; /* Show on mobile */
+        position: relative;
+        right: 0; /* Reset position */
+        top: 0; /* Reset position */
     }
 
     nav {
@@ -796,6 +982,21 @@ nav {
    
 
 </footer>
+
+<script>
+
+function toggleMenu() {
+        document.querySelector("nav").classList.toggle("active");
+    }
+
+        // Close Menu When a Link is Clicked
+        document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", function() {
+            document.querySelector("nav").classList.remove("active");
+        });
+    });
+
+</script>
 
 </body>
 </html>
