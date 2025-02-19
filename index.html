@@ -7,9 +7,362 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
- <!-- jecinta section css  css -->
+ 
  <style>
-   
+
+     /* EMMANUEL */
+ 
+        /* Reviews Section */
+        #reviews {
+            background-color: #fff;
+            padding: 40px;
+            display: flex;
+            border-radius: 12px;
+            max-width: 1100px; /* Ensures enough space for cards */
+            margin: auto;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+    #reviews {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align content */
+        padding: 20px; /* Reduce padding for smaller screens */
+        width: 90%; /* Make it responsive within screen width */
+    }
+}
+
+
+        /* Highlighted Heading */
+        #reviews h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        
+          .highlight {
+            color: #ff6600; /* Highlight color */
+        }
+
+        /* Reviews container - Aligns cards side by side */
+        .reviews-container {
+            display: flex;
+            justify-content: space-between; /* Even spacing */
+            gap: 30px; /* Space between cards */
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        }
+
+        /* Individual Review Card */
+        .review {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items:stretch;
+            gap: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 30%; /* Ensures three cards fit in a row */
+            text-align: center;
+            margin: 10px; /* Extra spacing between cards */
+        }
+
+        /* Profile Image */
+        .review-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border: 3px solid white;
+        }
+
+        /* Review Text */
+        .review-text {
+            margin-left: 70px; /* Moves text away from the image */
+        }
+
+        /* Reviewer Name */
+        .review-name a {
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Responsive Design - Stack cards vertically on smaller screens */
+        @media (max-width: 768px) {
+            .reviews-container {
+                flex-direction: column; /* Stacks reviews on smaller screens */
+                align-items: center;
+            }
+
+            .review {
+                width: 90%; /* Full width on smaller screens */
+            }
+        }
+
+
+
+/* Container to add space between sections */
+/* Container */
+
+/* Container */
+.container {
+    display: flex;  
+    justify-content: flex-start;  /* Aligns items to the left */
+    align-items: center;  
+    gap: 20px;  /* Space between the gallery and text */
+    padding: 0;  /* Remove padding */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;  /* Ensure container takes full width */
+    max-width: 100%;  /* Avoid extra spacing */
+    margin-top: 85px;;
+    margin-bottom: 85px;;
+}
+
+/* Gallery Container with Scroll */
+.gallery-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 75%;  /* Makes the gallery fill most of the container */
+    overflow: hidden;  /* Hide overflow to keep scrollable area neat */
+}
+
+/* Scrollable Gallery */
+.photo-gallery {
+    display: flex;
+    gap: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.photo-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+/* Image Styling */
+.photo-gallery img {
+    width: 170px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+/* Bounce Effect on Hover */
+.photo-gallery img:hover {
+    transform: translateY(-10px);  /* Moves the image up slightly */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow to give depth */
+}
+
+/* Arrow Buttons */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 3; /* Ensure arrows appear above images */
+    transition: background 0.3s;
+}
+
+/* Arrow Hover Effect */
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Left Arrow */
+.left {
+    left: 0;
+}
+
+/* Right Arrow */
+.right {
+    right: 0;
+}
+
+/* Text Section Style */
+.text-section {
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-between;
+    font-size: 18px;
+    width: 250px;  
+    margin-left: 20px; /* Space between image gallery and text */
+    line-height: 1.1;  
+}
+
+/* Different colors and bold text */
+.text-line:nth-child(1) { 
+    color: #FF5733; /* Red */
+    font-weight: bold;
+}
+
+.text-line:nth-child(2) { 
+    color: #28A745; /* Green */
+    font-weight: bold;
+}
+
+.text-line:nth-child(2) .hashtag { 
+    color: #007BFF; /* Blue for #shared */
+    
+}
+
+.text-line:nth-child(3) { 
+    color: #FFC107; /* Yellow */
+    font-weight: bold;
+}
+
+
+
+        
+.footer-container { 
+    position: relative;
+    background-color: #eee5e5; /* Dark background for footer */
+    color: rgb(19, 18, 18);
+    display: flex;
+    padding: 40px;
+    padding-top:15px,30px;
+    
+    
+}
+
+/* Contact Info Section (Left, Stacked) */
+.contact-info {
+    background-color: #ff3300; /* Red background */
+    padding: 50px;
+    border-radius:none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
+    position: absolute;
+    right: 0; /* Push to the far left */
+    top: 50%; /* Center it vertically */
+    transform: translateY(-50%);
+    color: white; /* Text color */
+    width: 30%; /* Adjust width */
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    margin: 5px 0;
+}
+
+/* Style icons */
+.contact-info i {
+    font-size: 16px;
+}
+
+/* Center Content Section */
+.center-content {
+    flex-grow: 1; /* Takes available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
+    text-align: center;
+    width: 50%; /* Ensures full width */
+}
+
+/* Styling for h3 */
+.notify-me h3 {
+  margin: 5px; /*Centers h3  */
+    padding: 5px 0px; /* Space above and below */
+    text-align: center; /* Center text */
+}
+
+/* Notify Me Section */
+.notify-me {
+    display: flex;
+    flex-direction: column; /* Stack input and button */
+    align-items: center;
+     gap: 10px; 
+    margin:auto ;
+    margin-top: -10px;
+    /* width: 100%; Ensures it aligns with h3 */
+}
+
+
+
+/* Styling for input field */
+.notify-me input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin: auto;
+    gap: 5px;
+    align-items: center;
+    margin-top: -5px;
+}
+
+/* Button Styling */
+.notify-me button {
+    padding: 8px;
+    background-color: #ff3300;;
+    color: white;
+    border: none;
+    cursor: pointer;
+    gap: 10px;
+    align-items: center;
+}
+.notify-me button:hover {
+    background-color: #ff3300;
+    ;
+}
+
+/* Burger Icon (Footer Left) */
+.burger-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer Links */
+.footer-links {
+    margin-top: 20px; /* Space between subscription section and links */
+}
+
+.footer-links ul {
+    list-style: none;  /* Remove default list styling */
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px; /* Add space between links */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #007BFF; /* Blue color for links */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* <!-- jecinta section css  css --> */
+
     .explore-menu {
 display: grid;
 grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
@@ -407,7 +760,7 @@ transform: translate(50%, -50%);
 <body>
 
     <section>
-    <header>
+    <!-- <header>
         <div class="logo">🍔 Burger Delight</div>
         <nav>
             <ul class="nav-links">
@@ -421,6 +774,21 @@ transform: translate(50%, -50%);
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
+        </nav>
+    </header> -->
+    <header>
+        <div class="logo">🍔 Burger Delight</div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Hot Deals</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li class="phone-number">08149909298</li>
+                <a href="/Order.html" class="order-btn">Order Now</a>
+            </ul>
         </nav>
     </header>
 
@@ -587,38 +955,141 @@ transform: translate(50%, -50%);
                 <div class="hover-text huge-quantity">Huge Quantity</div>
             </div>
         </section>
-    
-        <script>
-            const slider = document.querySelector('.hot-deals-slider');
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
-    let currentIndex = 0;
-    
-    function updateSliderPosition() {
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-    
-    leftArrow.addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? 2 : currentIndex - 1;
-        updateSliderPosition();
-    });
-    
-    rightArrow.addEventListener('click', () => {
-        currentIndex = (currentIndex === 2) ? 0 : currentIndex + 1;
-        updateSliderPosition();
-    });
-    
-        </script>
     </section>
+
+
+          <!-- emmanuel section task  -->
+    <!-- Customer Reviews Section -->
+     <div>
+        <h2 style="text-align: center;"><span class="highlight">Customer</span> Reviews</h2>
+     
+          <section id="reviews">
+           
+            
+            <div class="review">
+              <div class="review-img" style="background-image: url('/customer1.jpg');"></div>
+              <div class="review-text">
+                <p>“This product exceeded my expectations. The quality is outstanding, and the customer service was exceptional. Highly recommend!”</p>
+                <div class="review-name">
+                    <a href="">~John</a>
+                </div>
+              </div>
+            </div>
+            <div class="review">
+              <div class="review-img" style="background-image: url('/customer2.jpg');"></div>
+              <div class="review-text">
+                <p>“A game-changer in the industry. The features are intuitive, and the performance is top-notch. Worth every penny.”</p>
+                <div class="review-name">
+                    <a href="">~Jane Doe</a>
+                </div>
+              </div>
+            </div>
+            <div class="review">
+              <div class="review-img" style="background-image: url('/customer3.jpg');"></div>
+              <div class="review-text">
+                <p>“An excellent experience from start to finish. The team was responsive, and the end result was exactly what I envisioned.”</p>
+                <div class="review-name">
+                    <a href="">~Emily Johnson</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </section>
+</div>
+
+    <div class="container">
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+            <img src="/photo 1.jpg" alt="Photo 1">
+            <img src="/photo 2.jpg" alt="Photo 2">
+            <img src="/photo.jpeg" alt="Photo 3">
+            <img src="/photo 4.jpg" alt="Photo 4">
+            <img src="/photo 5.jpg" alt="Photo 5">
+            <img src="/p 1.jpg" alt="Photo 6">
+            <img src="/p2.jpg" alt="Photo 7">
+            <img src="/p3.jpg" alt="Photo 8">
+            <img src="/p4.jpg" alt="Photo 9">
+        </div>
+
+        <!-- Text Section -->
+        <div class="text-section">
+            <span class="text-line"><span class="text-span1">Our lovely</span></span>
+            <span class="text-line"><span class="text-span2">customer</span> <span class="text-span3">#shared</span></span>
+            <span class="text-line"><span class="text-span4">on Instagram</span></span>
+        </div>
+    </div>
     
-    
-   
-    
-   
-        
+
 <footer> 
-    <!-- emmanuel section task  -->
+  
+ <!-- Footer Section -->
+ <footer>
+    <section>
+<div class="footer-container">
+    <div class="left-sec">
+        <div class="notify-me">
+            <h3>Notify Me of Latest Offers</h3>
+            <div class="subscribe-box">
+                <input type="email" placeholder="Enter your email" class="email-input">
+                <button class="subscribe-btn">Subscribe</button>
+                 <!-- Footer Links Section -->
+                 <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Terms and Delivery</a></li>
+                        <li><a href="#">Privacy & Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="burger-icon">
+
+                <img src="/burgs.jpg" alt="Burger Icon" class="burger-icon">
+        
+            </div>
+       
+<section>
+        <div class="contact-info">
+            <!-- <h3>Contact Info</h3> -->
+            <p><i class="fas fa-envelope"></i> Email: example@email.com</p>
+            <p><i class="fas fa-phone"></i> Phone: +123 456 7890</p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: 123 Street, City, Country</p>
+        </div>
+    </section>
+       
+
 </footer>
+
+<script>
+
+
+function scrollGallery(direction) {
+            let gallery = document.querySelector(".photo-gallery");
+            let scrollAmount = 200; // Adjust scroll distance
+            gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+
+    const slider = document.querySelector('.hot-deals-slider');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+let currentIndex = 0;
+
+function updateSliderPosition() {
+slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+leftArrow.addEventListener('click', () => {
+currentIndex = (currentIndex === 0) ? 2 : currentIndex - 1;
+updateSliderPosition();
+});
+
+rightArrow.addEventListener('click', () => {
+currentIndex = (currentIndex === 2) ? 0 : currentIndex + 1;
+updateSliderPosition();
+});
+
+</script>
 
 </body>
 </html>

@@ -28,16 +28,21 @@ header {
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
-   
 }
 
 /* Navigation */
-nav {
+/* nav {
     display: flex;
     align-items: center;
     flex-grow: 1;
     justify-content: center;
     position: relative;
+} */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 /* Centering Nav Links */
@@ -74,64 +79,78 @@ nav {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    position: absolute;
+    /* position: absolute; */
     right: 50px;
     top: -10px;
+    transition: 0.3s ease-in-out;
 }
 
 .order-btn:hover {
     background: darkred;
+    transform: scale(1.05);
 }
 
 /* Hamburger Menu (Hidden by Default) */
 .hamburger {
     display: none;
     cursor: pointer;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
 }
 
 .hamburger i {
     font-size: 25px;
     color: black;
 }
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 768px) {
-    header {
-        padding: 15px 30px;
-    }
-
-    /* Hide Nav Links & Show Hamburger */
+    /* Hide Navigation Links Initially */
     .nav-links {
         display: none;
         flex-direction: column;
-        background: orange;
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
+        background: white;
         text-align: center;
-        padding: 15px 0;
-        border-top: 2px solid white;
-    }
-
-    .nav-links.active {
-        display: flex;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links li {
         padding: 10px 0;
     }
 
-    /* Show Hamburger Icon */
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    /* Display Phone Number */
+    .phone-number {
+        display: block;
+        font-size: 18px;
+        margin-top: 10px;
+        color: black;
+    }
+
+    /* Show Hamburger Menu */
     .hamburger {
         display: block;
     }
 
-    /* Order Now Button Responsive */
-    .order-btn {
-        position: relative;
-        right: 0;
-        top: 0;
-        margin-left: 15px;
+    /* Show Order Button Inside Mobile Menu */
+    .nav-links .order-btn {
+        display: block;
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* Show Navigation Links When Active */
+    nav.active .nav-links {
+        display: flex;
     }
 }
 /* Hero Section */
@@ -285,7 +304,7 @@ nav {
 
     .hero-content {
         max-width: 100%;
-        margin-top: 0;
+        margin-top: 100px;
     }
 
     .hero h2 {
@@ -379,4 +398,6 @@ nav {
     .home-socials a {
         font-size: 20px;
     }
+
+   
 }
