@@ -17,6 +17,13 @@ function showSlide(index) {
     });
 }
 
+  // Close Menu When a Link is Clicked
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function() {
+        document.querySelector("nav").classList.remove("active");
+    });
+});
+
 function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);

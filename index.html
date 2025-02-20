@@ -10,6 +10,7 @@
  
  <style>
 
+   
      /* EMMANUEL */
  
         /* Reviews Section */
@@ -461,97 +462,103 @@
 
 /* <!-- jecinta section css  css --> */
 
-    .explore-menu {
-display: grid;
-grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
-gap: 10px; /* Reduced gap for compactness */
-padding: 10px; /* Smaller padding around the section */
-margin-top: 60px;
-text-align: center;
+/* Explore Menu Grid Improvements */
+.explore-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+    margin-top: 60px;
+    text-align: center;
 }
 
-#Menu-span{
-color: #ff8000;
+#Menu-span {
+    color: #ff8000;
+    font-size: 24px;
+    font-weight: bold;
 }
+
 .menu-item {
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-background: #fff;
-padding: 0;
-border: 2px solid #ffcc00; /* Bright yellow border for branding */
-border-radius: 6px; /* Slightly smaller border-radius */
-overflow: hidden;
-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Slightly lighter shadow */
-transition: transform 0.2s ease, background-color 0.2s ease;
-height: 240px; /* Reduce overall height */
-padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px;
+    border: 3px solid #ffcc00;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: auto;
 }
 
 .menu-item:hover {
-background-color: #ff8000; /* Bright orange hover effect */
-transform: scale(1.05);
-border-color: #ff3300; /* Change border color on hover */
+    background-color: #ff8000;
+    transform: scale(1.05);
+    border-color: #ff3300;
 }
 
 .menu-item img {
-width: 100%;
-height: 120px; /* Smaller height for images */
-object-fit: cover; /* Ensure images fit nicely */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
+/* Ensuring Descriptions Are Always Visible */
 .menu-info {
-display: grid;
-grid-template-rows: auto auto auto;
-padding: 8px; /* Smaller padding for compactness */
-text-align: center;
-background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    background-color: #fff;
 }
 
 .menu-info h3 {
-margin: 3px 0;
-font-size: 16px; /* Smaller font size */
-font-weight: bold;
-color: #d80000; /* Bold red for titles */
-text-transform: uppercase; /* McDonald's playful and bold styling */
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d80000;
 }
 
 .menu-info p.price {
-color: #ffcc00; /* Bright yellow for price */
-font-weight: bold;
-font-size: 14px; /* Smaller font size */
-margin: 3px 0;
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px 0;
 }
 
 .menu-info p.description {
-color: #444; /* Neutral gray */
-font-size: 12px; /* Smaller font size */
-margin: 3px 0;
+    color: #444;
+    font-size: 14px;
+    margin: 5px 0;
+    display: block; /* Always visible */
 }
 
 /* Adjust grid layout for tablets */
 @media (max-width: 768px) {
-.explore-menu {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
-    gap: 10px; /* Keep gap compact */
-    padding: 10px; /* Reduced padding */
+    .explore-menu {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .menu-item {
+        height: auto;
+    }
+
+    .menu-info h3 {
+        font-size: 16px;
+    }
+
+    .menu-info p.price {
+        font-size: 14px;
+    }
+    .menu-info p.description {
+        font-size: 12px;
+    }
 }
-.menu-item {
-    height: 200px; /* Smaller height for items */
-}
-.menu-item img {
-    height: 100px; /* Smaller image height */
-}
-.menu-info h3 {
-    font-size: 14px; /* Smaller title font */
-}
-.menu-info p.price {
-    font-size: 12px; /* Smaller price font */
-}
-.menu-info p.description {
-    font-size: 10px; /* Smaller description font */
-}
-}
+
 
 /* Adjust grid layout for mobile devices */
 @media (max-width: 480px) {
@@ -561,30 +568,29 @@ margin: 3px 0;
     padding: 8px; /* Compact padding */
 }
 .menu-item {
-    height: 300px; /* Smaller height for compact layout */
-    margin: 20px;
-}
-.menu-item img {
-    height: 220px; /* Smaller image height */
-}
-.menu-info h3 {
-    font-size: 12px; /* Smaller title font for mobile */
-}
+        height: 270px; /* Increased height for mobile */
+    }
+    .menu-item img {
+        height: 160px; /* Adjusted image height */
+    }
+    .menu-info h3 {
+        font-size: 14px;
+    }
 .menu-info p.price {
     font-size: 10px; /* Smaller price font */
 }
 .menu-info p.description {
-    font-size: 9px; /* Compact description font */
-}
+        font-size: 11px;
+    }
 }
 
 
     /* Hot Deals Section */
 /* Hot Deals Section */
 .hot-deals {
-text-align: center;
-padding: 40px 20px;
-background-color: #fff5e6;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff5e6;
 }
 
 #deals-span{
@@ -600,13 +606,13 @@ margin-bottom: 20px;
 
 /* Slider Container */
 .hot-deals-container {
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
-max-width: 800px;
-margin: 0 auto;
-overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 /* Slider */
@@ -618,44 +624,41 @@ width: 100%;
 
 /* Individual Deal */
 .hot-deal {
-display: flex;
-align-items: center;
-background: #fff;
-border: 1px solid #ddd;
-border-radius: 8px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-overflow: hidden;
-min-width: 100%;
-text-align: left;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid #ff8000;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-width: 100%;
 }
 
 .hot-deal img {
-width: 50%;
-height: auto;
-border-right: 1px solid #ddd;
+    width: 50%;
+    height: auto;
+    border-right: 2px solid #ff8000;
 }
 
 .deal-info {
-padding: 20px;
-flex-grow: 1;
+    padding: 20px;
+    flex-grow: 1;
 }
 
 .deal-info h3 {
-font-size: 24px;
-margin-bottom: 10px;
-color: #333;
+    font-size: 22px;
+    color: #333;
 }
 
 .deal-info p {
-margin-bottom: 10px;
-color: #666;
-font-size: 16px;
+    color: #666;
+    font-size: 16px;
 }
 
 .deal-info .deal-price {
-font-size: 18px;
-color: #ff8000;
-font-weight: bold;
+    font-size: 20px;
+    color: #ff8000;
+    font-weight: bold;
 }
 
 .visit-now {
@@ -714,9 +717,9 @@ position: relative;
 }
 
 .why-try .content h2 {
-font-size: 36px;
-color: #333;
-margin-bottom: 5px;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 8px; /* Reduced margin */
 }
 
 .why-try .content h2 span {
@@ -725,69 +728,68 @@ font-weight: bold;
 }
 
 .why-try .content .subtitle {
-font-size: 18px;
-color: #666;
-margin-bottom: 30px;
-font-style: italic;
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 15px; /* Reduced spacing */
+    font-style: italic;
 }
 
-/* Burger Container */
 .burger-container {
-position: relative;
-display: inline-block;
-max-width: 800px;
-margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .burger-image {
-width: 100%;
-max-width: 600px;
-height: auto;
-display: block;
-margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
 }
 
 /* Floating Text */
 .hover-text {
-position: absolute;
-background: rgba(255, 128, 0, 0.9);
-color: #fff;
-padding: 5px 10px;
-border-radius: 15px;
-font-size: 14px;
-font-weight: bold;
-transition: transform 0.3s ease, opacity 0.3s ease;
-opacity: 0.9;
+    position: absolute;
+    background: rgba(255, 128, 0, 0.9);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
 }
 
 .hover-text:hover {
-transform: scale(1.1);
-opacity: 1;
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 /* Specific Positions for Floating Text */
 .best-quality {
-top: 50%;
-left: 5%;
-transform: translate(-50%, -50%);
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -50%);
 }
 
 .natural-ingredients {
-top: 30%;
-left: 60%;
-transform: translate(-50%, -50%);
+    top: 30%;
+    left: 60%;
+    transform: translate(-50%, -50%);
 }
 
 .fast-delivery {
-top: 65%;
-right: 5%;
-transform: translate(50%, -50%);
+    top: 65%;
+    right: 5%;
+    transform: translate(50%, -50%);
 }
 
 .huge-quantity {
-bottom: 10%;
-right: 50%;
-transform: translate(50%, -50%);
+    bottom: 10%;
+    right: 50%;
+    transform: translate(50%, -50%);
 }
 
 /* Media query for tablets (screens <= 768px) */
@@ -828,28 +830,31 @@ transform: translate(50%, -50%);
     max-width: 100%; /* Full-width container for mobile */
 }
 .burger-image {
-    max-width: 300px; /* Reduce burger image size for smaller screens */
-}
-.hover-text {
-    font-size: 10px; /* Smaller floating text */
-    padding: 3px 6px; /* Compact padding */
-}
-.best-quality {
-    top: 45%;
-    left: 10%; /* Shift slightly closer to center */
-}
-.natural-ingredients {
-    top: 25%;
-    left: 50%; /* Center more for smaller screens */
-}
-.fast-delivery {
-    top: 70%;
-    right: 10%; /* Shift slightly closer to center */
-}
-.huge-quantity {
-    bottom: 5%;
-    right: 45%; /* Adjust position */
-}
+        max-width: 300px;
+    }
+    .hover-text {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    .best-quality {
+        top: 45%;
+        left: 10%;
+    }
+
+    .natural-ingredients {
+        top: 25%;
+        left: 50%;
+    }
+
+    .fast-delivery {
+        top: 70%;
+        right: 10%;
+    }
+
+    .huge-quantity {
+        bottom: 5%;
+        right: 45%;
+    }
 }
 
 </style>
@@ -886,8 +891,9 @@ transform: translate(50%, -50%);
                 <li><a href="#hot-deals-section">Hot Deals</a></li>
                 <li><a href="/contact.html">Contact Us</a></li>
                 <li class="phone-number">08149909298</li>
+                <a href="/Order.html" class="order-btn">Order Now</a>
             </ul>
-            <a href="/Order.html" class="order-btn">Order Now</a>
+           
 
         </nav>
     </header>
