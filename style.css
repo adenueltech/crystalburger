@@ -292,9 +292,11 @@ nav {
 }
 
 .home-socials a {
-    color: red;
+    color: black;
     font-size: 30px;
     transition:transform 0.3 s ease, color 0.3s ease;
+    margin-top: -60px;
+    margin-left: 30px;
    
 }
 
@@ -407,10 +409,15 @@ nav {
 
     .home-socials {
         gap: 15px;
+       
     }
 
     .home-socials a {
         font-size: 20px;
+        margin-right: 30px;
+        margin-top: 2px;
+       
+        
     }
 
    
