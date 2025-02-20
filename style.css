@@ -146,6 +146,7 @@ nav {
         margin-top: 15px;
         font-size: 20px;
         font-weight: bold;
+        
     }
 
     /* Show Navigation Links When Active */
@@ -347,6 +348,7 @@ nav {
 
     .hero p {
         font-size: 16px;
+        color: black;
     }
 
     .slider-container {
